@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', Times, serif;
+  background: #f8f8f8;
+  color: #222;
+}
+.fullscreen-home {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #f8f8f8;
+}
+.fullscreen-home h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+  color: #222;
+}
+.home-nav {
+  display: flex;
+  gap: 0.7rem;
+}
+.home-nav a {
+  color: #111;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  transition: color 0.2s, text-decoration 0.2s;
+  display: inline-block;
+}
+.home-nav a:hover {
+  background: none;
+  color: #111;
+  text-decoration: underline;
+}
+footer {
+  text-align: center;
+  padding: 2rem 0 1rem 0;
+  color: #888;
+} 
