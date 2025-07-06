@@ -28,7 +28,8 @@ nav a {
   transition: color 0.2s;
 }
 nav a:hover {
-  text-decoration: underline;
+  background: none;
+  color: #fff;
 }
 section {
   max-width: 900px;
@@ -50,4 +51,4 @@ footer {
   header h1 {
     font-size: 2rem;
   }
-} 
+}

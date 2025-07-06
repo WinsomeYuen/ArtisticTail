@@ -19,6 +19,7 @@ body {
   margin-bottom: 2rem;
   letter-spacing: 2px;
   color: #222;
+  margin-block-end: 0;
 }
 .home-nav {
   display: flex;
@@ -37,7 +38,6 @@ body {
 .home-nav a:hover {
   background: none;
   color: #111;
-  text-decoration: underline;
 }
 footer {
   text-align: center;
