@@ -14,12 +14,16 @@ body {
   align-items: center;
   background: #f8f8f8;
 }
-.fullscreen-home h1 {
+h1 {
   font-size: 3rem;
-  margin-bottom: 2rem;
   letter-spacing: 2px;
   color: #222;
   margin-block-end: 0;
+}
+p { 
+  letter-spacing: 2px;
+  color: #222;
+  margin-block-start: 0;
 }
 .home-nav {
   display: flex;
