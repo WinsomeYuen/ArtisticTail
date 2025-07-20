@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', Times, serif;
+  background: #f8f8f8;
+  color: #222;
+}
+
+header {
+  background: #222;
+  color: #fff;
+  padding: 2rem 0 1.5rem 0;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+}
+
+nav {
+  margin-top: 1rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+section {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 3rem 2rem;
+}
+
+section h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 3rem 0;
+  color: #000;
+  position: relative;
+}
+
+section h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: #000;
+  border-radius: 2px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+
+.artwork {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.08),
+    0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+}
+
+.artwork:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.15),
+    0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.artwork::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #000;
+  transform: scaleX(0);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.artwork:hover::before {
+  transform: scaleX(1);
+}
+
+.artwork img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.artwork:hover img {
+  transform: scale(1.05);
+}
+
+.artwork-content {
+  padding: 1.5rem;
+  text-align: left;
+}
+
+.artwork h3 {
+  margin: 0 0 0.5rem 0;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1a202c;
+  letter-spacing: 0.5px;
+}
+
+.artwork p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #718096;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.artwork-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(113, 128, 150, 0.1);
+}
+
+.artwork-year {
+  background: #000;
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.artwork-category {
+  color: #718096;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.artwork-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+footer {
+  text-align: center;
+  padding: 3rem 0 2rem 0;
+  color: #718096;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  section {
+    margin: 2.5rem 1rem;
+    padding: 2.5rem 1.5rem;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 2rem 1rem;
+    margin: 2rem 0.5rem;
+  }
+  
+  section h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .artwork img {
+    height: 220px;
+  }
+  
+  .artwork-content {
+    padding: 1.25rem;
+  }
+  
+  .artwork h3 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  nav a {
+    margin: 0 1rem;
+    font-size: 0.9rem;
+  }
+  
+  section {
+    padding: 1.5rem 1rem;
+    margin: 1.5rem 0.5rem;
+    border-radius: 16px;
+  }
+  
+  section h1 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  
+  .artwork {
+    border-radius: 16px;
+  }
+  
+  .artwork img {
+    height: 200px;
+  }
+  
+  .artwork-content {
+    padding: 1rem;
+  }
+  
+  .artwork h3 {
+    font-size: 1.2rem;
+  }
+  
+  .artwork p {
+    font-size: 0.9rem;
+  }
+  
+  .artwork-meta {
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+  }
+  
+  .artwork-year {
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
+  }
+  
+  .artwork-category {
+    font-size: 0.8rem;
+  }
+}

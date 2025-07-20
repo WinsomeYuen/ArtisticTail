@@ -1,0 +1,93 @@
+.artwork-detail {
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 3rem 2rem;
+}
+
+.artwork-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.artwork-header h1 {
+  font-size: 3rem;
+  margin: 0 0 1rem 0;
+  color: #222;
+}
+
+.artwork-meta {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.meta-item {
+  background: #f8f8f8;
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.artwork-image {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.artwork-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.artwork-description {
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.8;
+  color: #444;
+}
+
+.artwork-description h3 {
+  color: #222;
+  margin-bottom: 1rem;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 2rem;
+  color: #666;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.back-link:hover {
+  color: #222;
+}
+
+.back-link::before {
+  content: '← ';
+}
+
+@media (max-width: 768px) {
+  .artwork-detail {
+    margin: 2rem 1rem;
+    padding: 2rem 1rem;
+  }
+  
+  .artwork-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .artwork-meta {
+    gap: 1rem;
+  }
+  
+  .meta-item {
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+  }
+} 
