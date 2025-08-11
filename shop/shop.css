@@ -1,0 +1,258 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: #111;
+  color: #fff;
+  line-height: 1.6;
+}
+
+header {
+  background: #111;
+  padding: 2rem;
+  text-align: center;
+  border-bottom: 1px solid #333;
+}
+
+header h1 {
+  margin: 0 0 1rem 0;
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 0.5rem 0;
+}
+
+#shop {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+#shop h2 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+.shop-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 4rem auto;
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.product-item {
+  background: #1a1a1a;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.product-image {
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.product-item:hover .product-image img {
+  transform: scale(1.05);
+}
+
+.placeholder-image {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #888;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.placeholder-image span:first-child {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.product-info {
+  padding: 2rem;
+}
+
+.product-info h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+.product-description {
+  color: #ccc;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.product-details {
+  color: #888;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.product-price {
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.buy-button {
+  width: 100%;
+  padding: 1rem 2rem;
+  background: #fff;
+  color: #111;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.buy-button:hover:not(.disabled) {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+.buy-button.disabled {
+  background: #333;
+  color: #666;
+  cursor: not-allowed;
+}
+
+.coming-soon {
+  opacity: 0.7;
+}
+
+.shop-info {
+  background: #1a1a1a;
+  border-radius: 8px;
+  padding: 3rem;
+  margin-top: 4rem;
+}
+
+.shop-info h3 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 3rem;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.info-item h4 {
+  color: #fff;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.info-item p {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.terms-link {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #333;
+}
+
+.terms-link a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.terms-link a:hover {
+  background: #fff;
+  color: #111;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 1rem;
+  }
+  
+  header h1 {
+    font-size: 2rem;
+  }
+  
+  nav {
+    gap: 1rem;
+  }
+  
+  #shop {
+    padding: 2rem 1rem;
+  }
+  
+  #shop h2 {
+    font-size: 2.5rem;
+  }
+  
+  .shop-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .shop-info {
+    padding: 2rem 1rem;
+  }
+  
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+}
