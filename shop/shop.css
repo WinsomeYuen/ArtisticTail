@@ -132,11 +132,24 @@ nav a {
   font-size: 0.9rem;
 }
 
+.price-section {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
 .product-price {
   font-size: 2rem;
   font-weight: 300;
-  margin-bottom: 1.5rem;
   color: #fff;
+}
+
+.price-note {
+  color: #ccc;
+  font-size: 1rem;
+  line-height: 1.2;
+  margin: 0;
 }
 
 .buy-button {
