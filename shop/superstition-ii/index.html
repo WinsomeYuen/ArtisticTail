@@ -25,7 +25,12 @@
     <div class="product-container">
       <div class="product-gallery">
         <div class="main-image">
-          <img src="../../works/Superstition/images/Superstition II.jpg" alt="Superstition II - Limited Edition Print">
+          <img id="current-image" src="../../works/Superstition/images/Superstition II.jpg" alt="Superstition II - Limited Edition Print">
+          <button class="nav-arrow prev-arrow" onclick="changeImage(-1)">‹</button>
+          <button class="nav-arrow next-arrow" onclick="changeImage(1)">›</button>
+        </div>
+        <div class="image-details">
+          <span id="image-counter">1 of 2</span>
         </div>
       </div>
       
@@ -103,7 +108,7 @@
           </div>
           <div class="info-item">
             <h4>Authentication</h4>
-            <p>Each print is signed and numbered by the artist with certificate of authenticity</p>
+            <p>Each print is signed and numbered by the artist</p>
           </div>
         </div>
       </div>
@@ -115,6 +120,40 @@
   </footer>
 
   <script>
+    // Image gallery functionality
+    const images = [
+      {
+        src: '../../works/Superstition/images/Superstition II.jpg',
+        alt: 'Superstition II - Limited Edition Print'
+      },
+      {
+        src: '../../works/Superstition/images/Superstition II Wall.jpeg',
+        alt: 'Superstition II - Wall Display'
+      }
+    ];
+    
+    let currentImageIndex = 0;
+    
+    function changeImage(direction) {
+      currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
+      
+      const currentImage = document.getElementById('current-image');
+      const imageCounter = document.getElementById('image-counter');
+      
+      currentImage.src = images[currentImageIndex].src;
+      currentImage.alt = images[currentImageIndex].alt;
+      imageCounter.textContent = `${currentImageIndex + 1} of ${images.length}`;
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'ArrowLeft') {
+        changeImage(-1);
+      } else if (event.key === 'ArrowRight') {
+        changeImage(1);
+      }
+    });
+    
     function handlePurchase() {
       // For now, redirect to contact page for purchase inquiries
       // In the future, this could integrate with an e-commerce platform
