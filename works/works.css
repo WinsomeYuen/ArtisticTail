@@ -192,6 +192,12 @@ footer {
   }
 }
 
+@media (min-width: 768px) { 
+  .artwork {
+    max-width: 450px;
+  }
+}
+
 @media (max-width: 768px) {
   section {
     padding: 2rem 1rem;

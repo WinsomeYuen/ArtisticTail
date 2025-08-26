@@ -34,7 +34,23 @@
     </div>
     
     <div class="artwork-image">
-      <img src="images/Superstition I.jpg" alt="Superstition - Dog Artwork by Winsome Yuen">
+      <div class="image-reel">
+        <div class="reel-container">
+          <img src="images/Superstition I.jpg" alt="Superstition I - Dog Artwork by Winsome Yuen" class="reel-image active">
+          <img src="images/Superstition II.jpg" alt="Superstition II - Dog Artwork by Winsome Yuen" class="reel-image">
+          <img src="images/Superstition III.jpg" alt="Superstition III - Dog Artwork by Winsome Yuen" class="reel-image">
+        </div>
+        
+        <div class="reel-controls">
+          <button class="reel-btn prev-btn" onclick="changeImage(-1)">‹</button>
+          <div class="reel-indicators">
+            <span class="indicator active" onclick="goToImage(0)"></span>
+            <span class="indicator" onclick="goToImage(1)"></span>
+            <span class="indicator" onclick="goToImage(2)"></span>
+          </div>
+          <button class="reel-btn next-btn" onclick="changeImage(1)">›</button>
+        </div>
+      </div>
     </div>
     
     <div class="artwork-description">
@@ -72,5 +88,68 @@
   <footer style="text-align:center; padding:2rem 0 1rem 0; color:#888;">
     &copy; 2025 ArtisticTail. All rights reserved.
   </footer>
+
+  <script>
+    let currentImageIndex = 0;
+    const images = document.querySelectorAll('.reel-image');
+    const indicators = document.querySelectorAll('.indicator');
+    let autoPlayInterval;
+
+    function showImage(index) {
+      // Hide all images
+      images.forEach(img => img.classList.remove('active'));
+      indicators.forEach(ind => ind.classList.remove('active'));
+      
+      // Show current image and indicator
+      images[index].classList.add('active');
+      indicators[index].classList.add('active');
+      
+      currentImageIndex = index;
+    }
+
+    function changeImage(direction) {
+      let newIndex = currentImageIndex + direction;
+      
+      if (newIndex >= images.length) {
+        newIndex = 0;
+      } else if (newIndex < 0) {
+        newIndex = images.length - 1;
+      }
+      
+      showImage(newIndex);
+      resetAutoPlay();
+    }
+
+    function goToImage(index) {
+      showImage(index);
+      resetAutoPlay();
+    }
+
+    function resetAutoPlay() {
+      clearInterval(autoPlayInterval);
+      startAutoPlay();
+    }
+
+    function startAutoPlay() {
+      autoPlayInterval = setInterval(() => {
+        changeImage(1);
+      }, 4000); // Change image every 4 seconds
+    }
+
+    // Start auto-play when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      startAutoPlay();
+      
+      // Pause auto-play on hover
+      const reelContainer = document.querySelector('.reel-container');
+      reelContainer.addEventListener('mouseenter', () => {
+        clearInterval(autoPlayInterval);
+      });
+      
+      reelContainer.addEventListener('mouseleave', () => {
+        startAutoPlay();
+      });
+    });
+  </script>
 </body>
 </html>
